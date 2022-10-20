@@ -28,6 +28,7 @@ jobs:
           with:
             # Args to jest
             jestArgs: ./client/src/__tests__
+        - run: npm install
           
   eslint: 
     name: ESLint
@@ -40,3 +41,4 @@ jobs:
         uses: mrdivyansh/eslint-action@v1.0.7
         with:
           execute-on-files: client/src
+      - run: npm install
