@@ -1,1 +1,40 @@
 
+# This is a basic workflow to help you get started with Actions
+
+name: Overall Workflow
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the "main" branch
+  push:
+    branches: [ "main", "feedback", "initial_framework" ]
+  pull_request:
+    branches: [ "main", "feedback", "initial_framework" ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  jest: 
+      name: Jest
+      runs-on: ubuntu-latest
+
+      steps: 
+        - name: Run Jest
+          # You may pin to the exact commit or the version.
+          # uses: stefanoeb/jest-action@f9bb23f509cde20ee9b494f0496d1d3323861cc4
+          uses: stefanoeb/jest-action@1.0.4
+          
+  eslint: 
+    name: ESLint
+    runs-on: ubuntu-latest
+    
+    steps: 
+      - name: ESLint (JS/TS) Action 
+      # You may pin to the exact commit or the version.
+      # uses: iCrawl/action-eslint@ff2a58dcbc1aaec51815d58e8bf70962c4f2b557
+        uses: iCrawl/action-eslint@v1
+        with:
+          # Custom glob to overwrite which files to lint.
+          custom-glob: routes/map.ts # optional, default is src
