@@ -15,8 +15,8 @@ const DropDown = () => {
       <Dropdown
         trigger={<button>Dropdown</button>}
         menu={[
-          <button onClick={handleMenuOne}>Menu 1</button>,
-          <button onClick={handleMenuTwo}>Menu 2</button>,
+          <button onClick={handleMenuOne}>Country Map</button>,
+          <button onClick={handleMenuTwo}>World Map</button>,
         ]}
       />
     );
