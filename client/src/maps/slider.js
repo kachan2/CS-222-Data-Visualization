@@ -15,10 +15,10 @@ export default function DiscreteSlider() {
         getAriaValueText={valuetext}
         // textAlign: "center" as const
         valueLabelDisplay="auto"
-        step={10}
+        step={1}
         marks
-        min={10}
-        max={110}
+        min={2013}
+        max={2022}
       />
       {/* <Slider defaultValue={30} step={10} marks min={10} max={110} disabled /> */}
     </Box>
