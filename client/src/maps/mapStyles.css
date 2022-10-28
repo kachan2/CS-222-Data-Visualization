@@ -5,19 +5,11 @@ html {
   
   body {
     margin: 0;
+    padding: 0 1.5rem;
   }
   
   svg {
     display: inline-block;
     vertical-align: middle;
-  }
-  
-  path {
-    fill: #2a354d;
-  }
-  
-  .App {
-    font-family: sans-serif;
-    text-align: center;
   }
   

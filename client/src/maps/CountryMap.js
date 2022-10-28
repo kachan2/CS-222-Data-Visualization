@@ -30,6 +30,7 @@ const CountryMap = () => {
   //   ]);
 
   return (
+    <div>
     <ComposableMap projection="geoAlbersUsa">
       <Geographies geography={geoUrl}>
         {({ geographies }) =>
@@ -46,6 +47,7 @@ const CountryMap = () => {
         }
       </Geographies>
     </ComposableMap>
+    </div>
   );
 };
 

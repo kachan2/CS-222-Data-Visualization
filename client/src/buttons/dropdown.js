@@ -10,12 +10,10 @@ const DropDown = () => {
   const navigate = useNavigate();
 
   const navigateToCountryMap = () => {
-    // 👇️ navigate to /contacts
     navigate('/country-map');
   };
 
   const navigateToWorldMap = () => {
-    // 👇️ navigate to /
     navigate('/world-map');
   };
   

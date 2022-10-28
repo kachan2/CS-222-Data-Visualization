@@ -4,9 +4,6 @@ import ReactDOM from "react-dom";
 import {BrowserRouter as Router} from 'react-router-dom';
 import reportWebVitals from './reportWebVitals';
 
-// Style Sheets
-import "./maps/styles.css";
-
 // React Elements
 import App from "./app/App";
 import DropDown from "./buttons/dropdown";
