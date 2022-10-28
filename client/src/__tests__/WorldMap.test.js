@@ -1,5 +1,5 @@
 import React from "react";
-import ShallowRenderer from 'react-test-renderer/shallow';
+import ShallowRenderer from 'react-shallow-renderer';
 
 // Components
 import WorldMap from "../maps/WorldMap"

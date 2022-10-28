@@ -8,21 +8,13 @@ import "./maps/styles.css";
 
 // React Elements
 import App from "./app/App";
-import MapChart from "./maps/CountryMap";
-import WorldMap from "./maps/WorldMap";
+import CountryMap from "./maps/CountryMap";
+import DropDown from "./buttons/dropdown";
 
 const rootElement = document.getElementById("root");
-ReactDOM.render(<><App /><WorldMap /><MapChart /></>, rootElement);
+ReactDOM.render(<><App /><DropDown /><CountryMap /></>, rootElement);
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
-
-
-
-
-
-
-
-

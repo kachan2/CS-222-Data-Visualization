@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly react-test-renderer 1`] = `
+<ComposableMap
+  projection="geoAlbersUsa"
+>
+  <Geographies
+    geography="https://cdn.jsdelivr.net/npm/us-atlas@3/counties-10m.json"
+  >
+    [Function]
+  </Geographies>
+</ComposableMap>
+`;
