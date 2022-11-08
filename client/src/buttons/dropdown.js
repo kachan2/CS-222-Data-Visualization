@@ -38,9 +38,11 @@ const Dropdown = ({ trigger, menu }) => {
 
   return (
     <div className="dropdown">
+      {/* handles button click */}
       {React.cloneElement(trigger, {
         onClick: handleOpen,
       })}
+      {/* opens menu on button click and renders menu items */}
       {open ? (
         <ul className="menu">
           {menu.map((menuItem, index) => (
@@ -56,6 +58,7 @@ const Dropdown = ({ trigger, menu }) => {
         </ul>
       ) : null}
     <div>
+      {/* routes to redirect to the world and country map */}
       <Routes>
         <Route path="/country-map" element={<CountryMap />} />
         <Route path="/world-map" element={<WorldMap />} />

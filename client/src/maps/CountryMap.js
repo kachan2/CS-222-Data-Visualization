@@ -1,19 +1,24 @@
-import React, { useState, useEffect } from "react";
+import React, { memo, useState, useEffect } from "react";
+import ReactTooltip from "react-tooltip";
 import { ComposableMap, Geographies, Geography } from "react-simple-maps";
 import { scaleQuantile } from "d3-scale";
 import { csv } from "d3-fetch";
+import MapSlider from "../buttons/slider";
 
 const geoUrl = "https://cdn.jsdelivr.net/npm/us-atlas@3/counties-10m.json";
 
-const CountryMap = () => {
+const MapChart = ({ setTooltipContent}) => {
   const [data, setData] = useState([]);
+  // const [counter, setCounter] = useState([]);
 
   useEffect(() => {
-    csv("/data/f22_clean.csv").then(counties => {
+    // change 22 to counter
+    csv( `/data/f${22}_clean.csv`).then(counties => {
       setData(counties);
     });
   }, []);
 
+  // color scale 
   const colorScale = scaleQuantile()
     .domain(data.map(d => d.population))
     .range([
@@ -29,25 +34,65 @@ const CountryMap = () => {
     ]);
 
   return (
-    <div>
-    <ComposableMap projection="geoAlbersUsa">
-      <Geographies geography={geoUrl}>
-        {({ geographies }) =>
-          geographies.map(geo => {
-            const cur = data.find(s => s.id === geo.id);
-            return (
-              <Geography
-                key={geo.rsmKey}
-                geography={geo}
-                fill={cur ? colorScale(cur.population) : "#EEE"}
-              />
-            );
-          })
-        }
-      </Geographies>
+    <>
+    <div data-tip="">
+    <ComposableMap 
+    projection="geoAlbersUsa"
+    projectionConfig={{ scale: 1000 }}
+    style={{
+      width: "100%",
+      height: "auto",
+      margin: -10, 
+    }}
+    >
+        {/* mapdping the data to the county components */}
+        
+        <Geographies geography={geoUrl}>
+          {({ geographies }) =>
+            geographies.map(geo => {
+              const cur = data.find(s => s.id === geo.id);
+              return (
+                <Geography
+                  // mapping color values to each county
+                  key={geo.rsmKey}
+                  geography={geo}
+                  fill={cur ? colorScale(cur.population) : "#EEE"}
+                  // setting hover feature 
+                  onMouseEnter={() => {
+                    setTooltipContent(`${geo.properties.name} County: ${cur.population}`);
+                  }}
+                  onMouseLeave={() => {
+                    setTooltipContent("");
+                  }}
+                  style={{
+                    hover: {
+                      fill: "#000",
+                      outline: "none"
+                    }
+                  }}
+                />
+              );
+            })
+          }
+        </Geographies>
     </ComposableMap>
     </div>
+    <MapSlider></MapSlider>
+    </>
   );
 };
 
-export default CountryMap;
+
+function CountryMap() {
+  const [content, setContent] = useState("");
+  return (
+    <div>
+      <MapChart setTooltipContent={setContent} />
+      <ReactTooltip>
+        {content}
+      </ReactTooltip>
+    </div>
+  );
+}
+
+export default memo(CountryMap);
