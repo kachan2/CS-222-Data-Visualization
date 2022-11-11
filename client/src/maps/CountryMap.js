@@ -7,15 +7,33 @@ import MapSlider from "../buttons/slider";
 
 const geoUrl = "https://cdn.jsdelivr.net/npm/us-atlas@3/counties-10m.json";
 
-const MapChart = ({ setTooltipContent}) => {
+const MapChart = ({ setTooltipContent }) => {
   const [data, setData] = useState([]);
-  // const [counter, setCounter] = useState([]);
+  // const [count, setCount] = useState(22);
+
+  // const handleClick = (event, num) => {
+  //   console.log(event.target);
+  //   if (num === -1 && count > 13) {
+  //      setCount(current => current + num);
+  //   } 
+  //   if (num === 1 && count < 22) {
+  //     setCount(current => current + num);
+  //   }
+
+  // };
+
+  // useEffect(() => {
+  //   csv( `/data/f${count}_clean.csv` ).then(counties => {
+  //     setData(counties);
+  //   });
+  //   // eslint-disable-next-line react-hooks/exhaustive-deps
+  // }, []);
 
   useEffect(() => {
-    // change 22 to counter
-    csv( `/data/f${22}_clean.csv`).then(counties => {
+    csv( `/data/f${22}_clean.csv` ).then(counties => {
       setData(counties);
     });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   // color scale 
@@ -35,6 +53,7 @@ const MapChart = ({ setTooltipContent}) => {
 
   return (
     <>
+    {/* <Slider handleClick={handleClick}/> */}
     <div data-tip="">
     <ComposableMap 
     projection="geoAlbersUsa"
@@ -46,7 +65,6 @@ const MapChart = ({ setTooltipContent}) => {
     }}
     >
         {/* mapdping the data to the county components */}
-        
         <Geographies geography={geoUrl}>
           {({ geographies }) =>
             geographies.map(geo => {
@@ -77,11 +95,10 @@ const MapChart = ({ setTooltipContent}) => {
         </Geographies>
     </ComposableMap>
     </div>
-    <MapSlider></MapSlider>
+    <MapSlider />
     </>
   );
 };
-
 
 function CountryMap() {
   const [content, setContent] = useState("");
