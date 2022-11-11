@@ -7,10 +7,12 @@ import reportWebVitals from './reportWebVitals';
 // React Elements
 import App from "./app/App";
 import DropDown from "./buttons/dropdown";
+// import BasicExample from "./buttons/navbar";
 
 const rootElement = document.getElementById("root");
 ReactDOM.render(
     <>
+        {/* <BasicExample /> */}
         <App />
         <Router>
             <DropDown />
