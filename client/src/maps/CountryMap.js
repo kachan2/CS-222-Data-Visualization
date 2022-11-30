@@ -1,48 +1,58 @@
 import React, { memo, useState, useEffect } from "react";
 import ReactTooltip from "react-tooltip";
-import { ComposableMap, Geographies, Geography, ZoomableGroup } from "react-simple-maps";
+import { ComposableMap, Geographies, Geography } from "react-simple-maps";
 import { scaleQuantile } from "d3-scale";
 import { csv } from "d3-fetch";
-import MapSlider from "../buttons/slider";
+import Slider from "../buttons/slider";
 
 const geoUrl = "https://cdn.jsdelivr.net/npm/us-atlas@3/counties-10m.json";
 
-const MapChart = ({ setTooltipContent }) => {
-  const [data, setData] = useState([]);
-  const [zoom, setZoom] = useState(1);
-  const [center, setCenter] = useState([0, 0]);
+// const geoUrl = "https://cdn.jsdelivr.net/npm/us-atlas@3/states-10m.json";
 
-  const handleGeographyClick = (geography, projection, path) => event => {
-    const centroid = projection.invert(path.centroid(geography));
-    setCenter(centroid);
-    setZoom(3);
+const MapChart = ({ setTooltipContent }) => {
+  const [count, setCount] = useState(13); // used to keep track of dataset
+  const [data, setData] = useState([]); // used to keep track of the rendered data
+  // const [zoom, setZoom] = useState(1);
+  // const [center, setCenter] = useState([0, 0]);
+
+  // updates the dataset rendered when the slider changes
+  const handleSliderClick = (event, num) => {
+    console.log(event.target);
+    setCount(num);
   };
 
   useEffect(() => {
-    csv( `/data/clean-data/f${22}_clean.csv` ).then(counties => {
+    csv( `/data/clean-data/f${count}_clean.csv` ).then(counties => {
       setData(counties);
     });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [count]);
+
+  // const handleGeographyClick = (geography, projection, path) => event => {
+  //   const centroid = projection.invert(path.centroid(geography));
+  //   setCenter(centroid);
+  //   setZoom(3);
+  // };
+
 
   // color scale 
   const colorScale = scaleQuantile()
     .domain(data.map(d => d.population))
     .range([
-      "#ffedea",
-      "#ffcec5",
-      "#ffad9f",
-      "#ff8a75",
-      "#ff5533",
-      "#e2492d",
-      "#be3d26",
-      "#9a311f",
-      "#782618"
+      "#FBEEE6",
+      "#F6DDCC",
+      "#EDBB99",
+      "#E59866",
+      "#DC7633",
+      // "#D35400",
+      "#BA4A00",
+      // "#A04000",
+      "#873600",
+      // "#6E2C00",
     ]);
 
   return (
     <>
-    {/* <Slider handleClick={handleClick}/> */}
+    <Slider handleSliderClick={handleSliderClick}/>
     <div data-tip="">
     <ComposableMap 
     projection="geoAlbersUsa"
@@ -53,10 +63,10 @@ const MapChart = ({ setTooltipContent }) => {
       margin: -10, 
     }}
     >
-      <ZoomableGroup center={center} zoom={zoom}>
+      {/* <ZoomableGroup center={center} zoom={zoom}> */}
         {/* mapdping the data to the county components */}
         <Geographies geography={geoUrl}>
-          {({ geographies, projection, path }) =>
+          {({ geographies}) =>
             geographies.map(geo => {
               const cur = data.find(s => s.id === geo.id);
               return (
@@ -65,7 +75,7 @@ const MapChart = ({ setTooltipContent }) => {
                   key={geo.rsmKey}
                   geography={geo}
                   // stylistic elements for country map
-                  fill={cur ? colorScale(cur.population) : "#EEE"}
+                  fill={cur ? colorScale(cur.population) : "#FBEEE6"}
                   stroke="#232323"
                   strokeWidth="0.3"
                   // setting hover feature 
@@ -83,16 +93,16 @@ const MapChart = ({ setTooltipContent }) => {
                     }
                   }}
                   // handling zoom-in onclick 
-                  onClick={handleGeographyClick(geo, projection, path)}
+                  // onClick={handleGeographyClick(geo, projection, path)}
                 />
               );
             })
           }
         </Geographies>
-      </ZoomableGroup>
+      {/* </ZoomableGroup> */}
     </ComposableMap>
     </div>
-    <MapSlider />
+    {/* <MapSlider handleSliderClick={handleSliderClick}/> */}
     </>
   );
 };
@@ -112,23 +122,3 @@ function CountryMap() {
 
 export default memo(CountryMap);
 
-
-  // const [count, setCount] = useState(22);
-
-  // const handleClick = (event, num) => {
-  //   console.log(event.target);
-  //   if (num === -1 && count > 13) {
-  //      setCount(current => current + num);
-  //   } 
-  //   if (num === 1 && count < 22) {
-  //     setCount(current => current + num);
-  //   }
-
-  // };
-
-  // useEffect(() => {
-  //   csv( `/data/f${count}_clean.csv` ).then(counties => {
-  //     setData(counties);
-  //   });
-  //   // eslint-disable-next-line react-hooks/exhaustive-deps
-  // }, []);

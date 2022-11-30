@@ -2,8 +2,7 @@ import * as React from 'react';
 import {Routes, Route, useNavigate} from 'react-router-dom';
 
 import CountryMap from '../maps/CountryMap';
-// import WorldMap from '../maps/WorldMap';
-import Slider from './slider';
+import WorldMap from '../maps/WorldMap';
 
 import "./dropdown.css";
 
@@ -62,7 +61,7 @@ const Dropdown = ({ trigger, menu }) => {
       {/* routes to redirect to the world and country map */}
       <Routes>
         <Route path="/country-map" element={<CountryMap />} />
-        <Route path="/world-map" element={<Slider />} />
+        <Route path="/world-map" element={<WorldMap />} />
       </Routes>
     </div>
     </div>
