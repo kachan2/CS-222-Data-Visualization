@@ -18,7 +18,7 @@ const MapChart = ({ setTooltipContent }) => {
   };
 
   useEffect(() => {
-    csv( `/data/clean-data/f${count}_clean.csv` ).then(counties => {
+    csv( `/data/clean-data/counties/f${count}_clean.csv` ).then(counties => {
       setData(counties);
     });
   }, [count]);

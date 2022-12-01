@@ -10,7 +10,6 @@ const geoUrl = "https://cdn.jsdelivr.net/npm/us-atlas@3/states-10m.json";
 const MapChart = ({ setTooltipContent }) => {
   const [count, setCount] = useState(13); // used to keep track of dataset
   const [data, setData] = useState([]); // used to keep track of the rendered data
-  // const [path, setPath] = useState(geoUrl);
 
   // updates the dataset rendered when the slider changes
   const handleSliderClick = (event, num) => {
@@ -24,7 +23,7 @@ const MapChart = ({ setTooltipContent }) => {
 
   // load in csv data
   useEffect(() => {
-    csv( `/data/clean-data/f${count}_state.csv` ).then(states => {
+    csv( `/data/clean-data/states/f${count}_state.csv` ).then(states => {
       setData(states);
     });
   }, [count]);

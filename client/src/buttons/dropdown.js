@@ -3,6 +3,7 @@ import {Routes, Route, useNavigate} from 'react-router-dom';
 
 import CountryMap from '../maps/CountryMap';
 import CountyMap from '../maps/CountyMap';
+import WorldMap from '../maps/WorldMap';
 
 import "./dropdown.css";
 
@@ -17,12 +18,17 @@ const DropDown = () => {
     navigate('/counties-map');
   };
 
+  const navigateToWorldMap = () => {
+    navigate('/world-map');
+  };
+
   return (
     <Dropdown
       trigger={<button>Select Map</button>}
       menu={[
-        <button onClick={navigateToCountryMap}>Country Map</button>,
         <button onClick={navigateToCountyMap}>County Map</button>,
+        <button onClick={navigateToCountryMap}>Country Map</button>,
+        <button onClick={navigateToWorldMap}>World Map</button>,
       ]}
     />
     
@@ -60,8 +66,9 @@ const Dropdown = ({ trigger, menu }) => {
     <div>
       {/* routes to redirect to the world and country map */}
       <Routes>
-        <Route path="/country-map" element={<CountryMap />} />
         <Route path="/counties-map" element={<CountyMap />} />
+        <Route path="/country-map" element={<CountryMap />} />
+        <Route path="/world-map" element={<WorldMap />} />
       </Routes>
     </div>
     </div>
