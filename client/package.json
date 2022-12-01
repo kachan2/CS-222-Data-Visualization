@@ -14,6 +14,7 @@
     "d3-fetch": "^3.0.1",
     "d3-scale": "^4.0.2",
     "react": "^18.2.0",
+    "react-colorscales": "^0.7.3",
     "react-dom": "^18.2.0",
     "react-dropdown": "^1.11.0",
     "react-router-dom": "^6.4.2",

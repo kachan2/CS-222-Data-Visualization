@@ -1,6 +1,6 @@
 :root {
-  --main-color: rgb(104, 117, 217);
-  --main-color-hover: rgb(104, 117, 217, 0.2);
+  --main-color: rgb(217, 138, 104);
+  --main-color-hover: rgba(217, 164, 104, 0.2);
   --track-color: #ddd;
 }
 

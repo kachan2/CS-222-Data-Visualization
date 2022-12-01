@@ -1,11 +1,9 @@
 import React, { memo, useState, useEffect } from "react";
-// import { render} from "react";
 import ReactTooltip from "react-tooltip";
 import { ComposableMap, Geographies, Geography } from "react-simple-maps";
 import { scaleQuantile } from "d3-scale";
 import { csv } from "d3-fetch";
 import Slider from "../buttons/slider";
-// import CountyMap from "./CountyMap";
 
 const geoUrl = "https://cdn.jsdelivr.net/npm/us-atlas@3/states-10m.json";
 
@@ -33,19 +31,25 @@ const MapChart = ({ setTooltipContent }) => {
 
   // color scale 
   const colorScale = scaleQuantile()
-    .domain(data.map(d => d.population))
+    .domain([0, 5, 10, 50, 100, 200, 250, 300, 500, 700, 800, 850, 1000, 2000, 10000, 15000, 30000])
     .range([
-      "#FBEEE6",
-      "#FFE5B4",
-      "#F6DDCC",
-      "#EDBB99",
-      "#E59866",
-      "#DC7633",
-      "#D35400",
-      "#BA4A00",
-      "#A04000",
-      "#873600",
-      "#6E2C00",
+      "#ffeee6",
+      "#ffddcc",
+      "#ffccb3",
+      "#ffbb99",
+      "#ffaa80",
+      "#ff9966",
+      "#ff884d",
+      "#ff7733",
+      "#ff661a",
+      "#ff5500",
+      "#e64d00",
+      "#cc4400",
+      "#b33c00",
+      "#993300",
+      "#802b00",
+      "#662200",
+      "#4d1a00"
     ]);
 
   return (
@@ -53,10 +57,12 @@ const MapChart = ({ setTooltipContent }) => {
     <ComposableMap 
     data-tip=""
     projection="geoAlbersUsa"
-    projectionConfig={{ scale: 1000 }}
+    projectionConfig={{ scale: 750 }}
+    width={800}
+    height={350}
     style={{
-      width: "100%",
-      height: "auto",
+      width: "100%", 
+      height: "80%",
       margin: -10, 
     }}
     >
@@ -100,7 +106,7 @@ const MapChart = ({ setTooltipContent }) => {
   );
 };
 
-function WorldMap() {
+function CountryMap() {
   const [content, setContent] = useState("");
   return (
     <div>
@@ -113,4 +119,4 @@ function WorldMap() {
   );
 }
 
-export default memo(WorldMap);
+export default memo(CountryMap);

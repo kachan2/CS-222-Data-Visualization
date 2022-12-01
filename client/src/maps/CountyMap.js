@@ -23,31 +23,42 @@ const MapChart = ({ setTooltipContent }) => {
     });
   }, [count]);
 
-  // color scale 
+  // color scale
   const colorScale = scaleQuantile()
-    .domain(data.map(d => d.population))
+    .domain([0, 1, 5, 7, 10, 15, 20, 50, 70, 80, 90, 100, 500, 1000, 2000, 4000, 10000])
     .range([
-      "#FFE5B4",
-      "#F6DDCC",
-      "#EDBB99",
-      "#E59866",
-      "#DC7633",
-      // "#D35400",
-      "#BA4A00",
-      // "#A04000",
-      // "#873600",
-      // "#6E2C00",
+      "#ffeee6",
+      "#ffddcc",
+      "#ffccb3",
+      "#ffbb99",
+      "#ffaa80",
+      "#ff9966",
+      "#ff884d",
+      "#ff7733",
+      "#ff661a",
+      "#ff5500",
+      "#e64d00",
+      "#cc4400",
+      "#b33c00",
+      "#993300",
+      "#802b00",
+      "#662200",
+      "#4d1a00"
     ]);
+
+  
 
   return (
     <>
     <div data-tip="">
     <ComposableMap 
     projection="geoAlbersUsa"
-    projectionConfig={{ scale: 1000 }}
+    projectionConfig={{ scale: 750 }}
+    width={800}
+    height={350}
     style={{
-      width: "100%",
-      height: "auto",
+      width: "100%", 
+      height: "80%",
       margin: -10, 
     }}
     >
@@ -91,7 +102,7 @@ const MapChart = ({ setTooltipContent }) => {
   );
 };
 
-function CountryMap() {
+function CountyMap() {
   const [content, setContent] = useState("");
   return (
     <div>
@@ -104,5 +115,5 @@ function CountryMap() {
   );
 }
 
-export default memo(CountryMap);
+export default memo(CountyMap);
 
