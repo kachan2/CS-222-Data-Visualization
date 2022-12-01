@@ -1,14 +1,20 @@
-# CS-222-Data-Visualization
+# PROJECT TITLE
 > *By Arul, Jash, Nimish, and Kaitlyn*
 
 ## Introduction 
-BLURB
+Motivation: EXPLAIN MOTIVATION
+Functionality: EXPLAIN FUNCTIONALITY
 
 ## Architecture
 EXPLAIN WHERE EVERYTING IS AND WHAT INTERACTS WITH WHAT COMPONENTS, ETC
 
 ## Project Setup
-INSTRUCTIONS/STEPS
+1. Clone this GitHub repository
+2. open project and navigate to *client* folder
+3. run the following line in the terminal to install all necessary dependencies: 
+```npm install```
+4. run the following line in the terminal to run the project (make sure it is run in the client folder): 
+```npm start```
 
 ## Roles
 #### Arul: 
