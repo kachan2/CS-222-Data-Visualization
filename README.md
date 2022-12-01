@@ -10,7 +10,7 @@ EXPLAIN WHERE EVERYTING IS AND WHAT INTERACTS WITH WHAT COMPONENTS, ETC
 
 ## Project Setup
 1. Clone this GitHub repository
-2. open project and navigate to *client* folder
+2. open project and navigate to *client* folder via terminal
 3. run the following line in the terminal to install all necessary dependencies: 
 ```npm install```
 4. run the following line in the terminal to run the project (make sure it is run in the client folder): 
