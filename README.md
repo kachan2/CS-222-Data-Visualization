@@ -12,7 +12,7 @@ EXPLAIN FUNCTIONALITY
 A LITTLE BIT OF EXPLANATION. 
 
 Front End App: 
-* **client**: where the 
+* **client**: contains the React App files
   * **src**: this folder houses most of the JavaScript files that are compiled by webpack
     * **components**: 
       * **App**: the parent component that renders the dropdown menu when the app is first started
