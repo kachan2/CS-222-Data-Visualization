@@ -4,7 +4,7 @@ import ShallowRenderer from 'react-shallow-renderer';
 // Components
 import WorldMap from "../maps/WorldMap"
 
-it('renders correct world map', () => {
+it('render country map correctly', () => {
   const renderer = new ShallowRenderer();
   renderer.render(<WorldMap />);
   const result = renderer.getRenderOutput();
