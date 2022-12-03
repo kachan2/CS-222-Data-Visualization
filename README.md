@@ -16,15 +16,15 @@ Front End App:
   * **src**: this folder houses most of the JavaScript files that are compiled by webpack
     * **components**: 
       * **App**: the parent component that renders the dropdown menu when the app is first started
-      * **dropdown**: a menu that opens and closes onclick as well as renderes a different map component depending on the type seelcted
+      * **dropdown**: a menu that opens and closes onclick as well as renders a different map component depending on the type selected
       * **slider**: injects new data into the map component when changed by the user by prompting a new action to update the map states
       * **maps**: reads the csv data and maps it to the data state in the component. A composable map is rendered with geographies that match the data ids to the topojson ids from the geoUrl
   * **public**: 
-    * index.hmtl: 
+    * index.hmtl: where the HTML code of the React Components are injected into
     
 Back end: 
 * **data**: 
-  * ALL DATA PARSING FILES ADN WHATNOT
+  * ALL DATA PARSING FILES AND WHATNOT
 
 ## Project Setup
 1. Clone this GitHub repository
