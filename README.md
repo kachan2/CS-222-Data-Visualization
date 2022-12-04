@@ -21,17 +21,16 @@ Front End App:
       * **maps**: reads the csv data and maps it to the data state in the component. A composable map is rendered with geographies that match the data ids to the topojson ids from the geoUrl
   * **public**: 
     * index.hmtl: where the HTML code of the React Components are injected into
-    
 Back end: 
 * **data**: 
   * ALL DATA PARSING FILES AND WHATNOT
 
 ## Project Setup
 1. Clone this GitHub repository
-2. open project and navigate to *client* folder via terminal
-3. run the following line in the terminal to install all necessary dependencies: 
+2. Open project and navigate to *client* folder via terminal
+3. Run the following line in the terminal to install all necessary dependencies: 
 ```npm install```
-4. run the following line in the terminal to run the project (make sure it is run in the client folder): 
+4. Run the following line in the terminal to run the project (make sure it is run in the client folder): 
 ```npm start```
 
 ## Roles
@@ -42,9 +41,4 @@ BLURB OF WHAT JASH DID
 #### Nimish: 
 BLURB OF WHAT NIMISH DID
 #### Kaitlyn: 
-React App and Components: 
-* App
-* County/State/World Maps
-* Slider
-* DropDown Menu
-
+React App and Components: App, County/State/World Maps, Slider (updating data onChange), Dropdown Menu
