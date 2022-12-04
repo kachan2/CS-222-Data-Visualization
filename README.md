@@ -9,8 +9,6 @@ Functionality:
 EXPLAIN FUNCTIONALITY
 
 ## Architecture
-A LITTLE BIT OF EXPLANATION. 
-
 Front End App: 
 * **client**: contains the React App files
   * **src**: this folder houses most of the JavaScript files that are compiled by webpack
@@ -21,6 +19,9 @@ Front End App:
       * **maps**: reads the csv data and maps it to the data state in the component. A composable map is rendered with geographies that match the data ids to the topojson ids from the geoUrl
   * **public**: 
     * index.hmtl: where the HTML code of the React Components are injected into
+    * wherever else all the rest of the navigation bar stuff is 
+
+
 Back end: 
 * **data**: 
   * ALL DATA PARSING FILES AND WHATNOT
