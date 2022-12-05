@@ -27,13 +27,11 @@ Front End App:
 
 Back end: 
 * **data**: 
-  * **client**: contains the React App files
+  * **client**: contains all relevant data files
   * **public**: this folder contains our data parsing and analyzation files in folders *clean-data* and *data-analysis*
     * **components**: 
-      * **Data Analyzation Pipeline**: script reads in datasets and performs whatever cleaning was necessary (rids file of outliers, etc.)
-      * **dropdown**: a menu that opens and closes onclick as well as renders a different map component depending on the type selected
-      * **slider**: injects new data into the map component when changed by the user by prompting a new action to update the map states
-      * **maps**: reads the csv data and maps it to the data state in the component. A composable map is rendered with geographies that match the data ids to the topojson ids from the geoUrl 
+      * **Data Parsing Pipeline**: script reads in datasets and performs whatever cleaning was necessary (rids file of outliers, etc.)
+      * **Visualizations**: files containing data visualizations for all the years; visualizations include pie charts and scatter plots for the year by year data
 
 ## Project Setup
 1. Clone this GitHub repository
@@ -45,7 +43,7 @@ Back end:
 
 ## Roles
 #### Arul: 
-BLURB OF WHAT ARUL DID
+Found relevant datasets: Wrote code to clean, and reformat datasets: Performed Data Analysis and created Visualizations
 #### Jash: 
 Built data parsing pipeline: found relevant datasets, wrote scripts to parse through, clean, and reformat datasets, worked w/ Arul to analyze data
 #### Nimish: 
