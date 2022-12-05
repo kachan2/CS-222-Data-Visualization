@@ -47,6 +47,6 @@ Found relevant datasets: Wrote code to clean, and reformat datasets: Performed D
 #### Jash: 
 Built data parsing pipeline: found relevant datasets, wrote scripts to parse through, clean, and reformat datasets, worked w/ Arul to analyze data
 #### Nimish: 
-BLURB OF WHAT NIMISH DID
+Navigation and Data Visualization: Developed navigation bar, embedded raw datasets and visualizations, and worked w/ Kaitlyn on front-end React App
 #### Kaitlyn: 
 React App and Components: App, County/State/World Maps, Slider (updating data onChange), Dropdown Menu
