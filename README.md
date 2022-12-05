@@ -1,4 +1,4 @@
-# PROJECT TITLE
+# UIUC Demographic Data Visualizations
 > *By Arul, Jash, Nimish, and Kaitlyn*
 
 ## Introduction 
