@@ -3,10 +3,13 @@
 
 ## Introduction 
 Motivation: 
-EXPLAIN MOTIVATION
+The University of Illinois at Urbana-Champaign continuously strives toward its commitment to diversity and inclusion within the campus and its community. In doing so, it’s become a renowned school across the country as well as internationally. How much have the demographics at UIUC changed? How has the university’s diversity expanded? Our project uses historical and current data of students at UIUC to track and map these changes over the past 10 years. Our visualizations will make large quantities of raw data easily comprehensible through our map visualization and will display a clear illustration of the minutiae and subtle changes in the university’s student demographics. It will also give better insight into if UIUC has continued to promote diversity and inclusion within campus over the years.
 
 Functionality:
-EXPLAIN FUNCTIONALITY
+* Visualization: choropleth maps at the county and state levels for the USA, and country level for the rest of the world
+* Slider Feature: changes data across different years
+* Hover Feature: shows the county/state/country name and the number of students from that area
+* Data Analysis: graphs and analysis components that further break down the data
 
 ## Architecture
 Front End App: 
