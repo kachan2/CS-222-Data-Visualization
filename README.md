@@ -41,7 +41,7 @@ Back end:
 #### Arul: 
 BLURB OF WHAT ARUL DID
 #### Jash: 
-BLURB OF WHAT JASH DID
+Built data parsing pipeline: found relevant datasets, wrote scripts to parse through, clean, and reformat datasets, worked w/ Arul to analyze data
 #### Nimish: 
 BLURB OF WHAT NIMISH DID
 #### Kaitlyn: 
