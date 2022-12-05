@@ -3,5 +3,5 @@ import App from '../app/App';
 
 test('renders App', () => {
   render(<App />);
-  expect(screen.getByRole("heading")).toHaveTextContent("Welcome to UIUC Data Visualizaiton");
+  expect(screen.getByRole("heading")).toHaveTextContent("Interactive Maps");
 });
