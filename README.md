@@ -22,7 +22,6 @@ Front End App:
       * **maps**: reads the csv data and maps it to the data state in the component. A composable map is rendered with geographies that match the data ids to the topojson ids from the geoUrl
   * **public**: 
     * index.hmtl: where the HTML code of the React Components are injected into
-    * wherever else all the rest of the navigation bar stuff is 
     * data.html: highlights a sample data set with zip code data pertinent to students at UIUC
     * stats.html: displays differences in the students at UIUC, split by zip code and charted. The difference highlights a 10 year change from 2009 to 2019.
     * about.html: includes the ReadMe file with instructions of the React App and Data parsing pipeline.
