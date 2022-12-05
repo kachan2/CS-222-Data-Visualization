@@ -27,13 +27,13 @@ Front End App:
 
 Back end: 
 * **data**: 
-  * **clean-filest**: relevant cleaned data
-   * **components**: 
-      * **Data Parsing Pipeline**: script reads in datasets and performs whatever cleaning was necessary (rids file of outliers, etc.)
+  * **clean-files**: relevant cleaned data
+    * **components**: 
+        * **Data Parsing Pipeline**: script reads in datasets and performs whatever cleaning was necessary (rids file of outliers, etc.)
   * **data_analysis**: this folder contains our data parsing and analyzation files in folders *clean-data* and *data-analysis*
     * **components**: 
-       * **Visualizations**: files containing data visualizations for all the years; visualizations include pie charts and scatter plots for the year by year data
-  * * **clean-filest**: other files
+        * **Visualizations**: files containing data visualizations for all the years; visualizations include pie charts and scatter plots for the year by year data
+  * **files**: other files
    
 
 ## Project Setup
