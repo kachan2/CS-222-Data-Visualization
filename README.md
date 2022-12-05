@@ -23,18 +23,17 @@ Front End App:
   * **public**: 
     * index.hmtl: where the HTML code of the React Components are injected into
     * wherever else all the rest of the navigation bar stuff is 
-
+    * data.html: highlights a sample data set with zip code data pertinent to students at UIUC
+    * stats.html: displays differences in the students at UIUC, split by zip code and charted. The difference highlights a 10 year change from 2009 to 2019.
+    * about.html: includes the ReadMe file with instructions of the React App and Data parsing pipeline.
 
 Back end: 
 * **data**: 
-  * **clean-files**: relevant cleaned data
+  * **client**: contains all relevant data files
+  * **public**: this folder contains our data parsing and analyzation files in folders *clean-data* and *data-analysis*
     * **components**: 
-        * **Data Parsing Pipeline**: script reads in datasets and performs whatever cleaning was necessary (rids file of outliers, etc.)
-  * **data_analysis**: this folder contains our data parsing and analyzation files in folders *clean-data* and *data-analysis*
-    * **components**: 
-        * **Visualizations**: files containing data visualizations for all the years; visualizations include pie charts and scatter plots for the year by year data
-  * **files**: other files
-   
+      * **Data Parsing Pipeline**: script reads in datasets and performs whatever cleaning was necessary (rids file of outliers, etc.)
+      * **Visualizations**: files containing data visualizations for all the years; visualizations include pie charts and scatter plots for the year by year data
 
 ## Project Setup
 1. Clone this GitHub repository
